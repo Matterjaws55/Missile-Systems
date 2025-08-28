@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d872051cc5791a4cacea50639aecb3a, type: 3}
+  m_Name: Level3
+  m_EditorClassIdentifier: 
+  levelName: Level 3
+  ships:
+  - shipPrefab: {fileID: 7487788672591212338, guid: 5cd935c3f9d152e48adb6c8fd475429b, type: 3}
+    position: {x: 56.600006, y: 0.53, z: -134.2}
+    rotation: {x: 0, y: -60, z: 0}
+  - shipPrefab: {fileID: 7487788672591212338, guid: 5cd935c3f9d152e48adb6c8fd475429b, type: 3}
+    position: {x: -187.9, y: 0.53, z: -230.9}
+    rotation: {x: 0, y: 59, z: 0}
+  - shipPrefab: {fileID: 7487788672591212338, guid: 5cd935c3f9d152e48adb6c8fd475429b, type: 3}
+    position: {x: -13.700012, y: 0.53, z: -410.5}
+    rotation: {x: 0, y: -15, z: 0}
+  - shipPrefab: {fileID: 3775970121372399039, guid: 66bb6ac1eceb80e4bb5cbe2c147f0ce9, type: 3}
+    position: {x: -294.70398, y: 0.53, z: -50.041515}
+    rotation: {x: 0, y: 92, z: 0}
