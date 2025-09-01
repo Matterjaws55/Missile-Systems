@@ -6,6 +6,7 @@ public class CrankEffect : MonoBehaviour
     public float rotationSpeed = 0.5f;   
     public AudioSource crankSound;
     public AudioSource reloadSound;
+    public HomingMissile missile;
 
     private bool isDragging = false;
     private float lastAngle;
@@ -14,6 +15,9 @@ public class CrankEffect : MonoBehaviour
 
     void Update()
     {
+        if (missile.launched)
+            hasReloaded = false;
+
         if (Input.GetMouseButtonDown(0))
         {
             if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
@@ -39,7 +43,7 @@ public class CrankEffect : MonoBehaviour
             crankSound.Stop();
         }
 
-        if (isDragging)
+        if (isDragging && !hasReloaded) 
         {
             float currentAngle = GetMouseAngle();
             float deltaAngle = Mathf.DeltaAngle(lastAngle, currentAngle);
@@ -53,7 +57,7 @@ public class CrankEffect : MonoBehaviour
                 while (accumulatedRotation <= -1080)
                 {
                     accumulatedRotation += 1080;
-                    hasReloaded = true;
+                    hasReloaded = true; 
 
                     reloadSound.Play();
                 }

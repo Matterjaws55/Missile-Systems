@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.ProBuilder;
 using UnityEngine.XR;
+using Unity.VisualScripting.Antlr3.Runtime;
 
 public class Printer : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class Printer : MonoBehaviour
     public AudioSource printerSound;
     public AudioSource paperSound;
 
-    bool canSeeUI;
+    bool isOpen = false;
 
     void Start()
     {
@@ -22,15 +23,21 @@ public class Printer : MonoBehaviour
 
     void OnMouseDown()
     {
-        tutorialUI.SetActive(true);
         paperSound.Play();
         model.SetActive(false);
-        if(canSeeUI)
+        if (!isOpen)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                tutorialUI.SetActive(false);
-            }
+            tutorialUI.SetActive(true);
+            isOpen = true;
+        }
+    }
+
+    void Update()
+    {
+        if (isOpen && Input.GetMouseButtonDown(0))
+        {
+            tutorialUI.SetActive(false);
+            isOpen = false;
         }
     }
 
@@ -39,7 +46,6 @@ public class Printer : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         PrintAnimation();
-        canSeeUI = true;
     }
 
     public void PrintAnimation()

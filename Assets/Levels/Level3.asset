@@ -23,6 +23,6 @@ MonoBehaviour:
   - shipPrefab: {fileID: 7487788672591212338, guid: 5cd935c3f9d152e48adb6c8fd475429b, type: 3}
     position: {x: -13.700012, y: 0.53, z: -410.5}
     rotation: {x: 0, y: -15, z: 0}
-  - shipPrefab: {fileID: 3775970121372399039, guid: 66bb6ac1eceb80e4bb5cbe2c147f0ce9, type: 3}
+  - shipPrefab: {fileID: 7487788672591212338, guid: 048678d9a6075ad4386c79b486126738, type: 3}
     position: {x: -294.70398, y: 0.53, z: -50.041515}
     rotation: {x: 0, y: 92, z: 0}

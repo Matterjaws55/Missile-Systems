@@ -11,7 +11,8 @@ public class HomingMissile : MonoBehaviour
     public float predictionFactor = 1.5f;      
     public float closeDistance = 10f;         
     public float wobbleMagnitude = 0.5f;      
-    public float wobbleFrequency = 2f;        
+    public float wobbleFrequency = 2f;
+    public bool launched = false;
 
     [Header("Target")]
     public float hoverTimeToLock = 1.5f;
@@ -40,8 +41,7 @@ public class HomingMissile : MonoBehaviour
     private Rigidbody rb;
     private Vector3 wobbleOffset;
     string targetTag = "Target";
-    private bool lockedOn = false;
-    private bool launched = false;
+    private bool lockedOn = false;    
     private Vector3 startPosition;
     private Quaternion startRotation;
     private float tempSpeed;

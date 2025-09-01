@@ -7,14 +7,15 @@ public class ButtonPress : MonoBehaviour
     {
         StartGame,
         ExitGame,
+        StoreMenu,
         DoesNothing
     }
 
     [Header("Button Type")]
     public ButtonFunction function;
 
-    public float moveDistance = 0.02f;  
-    public float moveSpeed = 1f;     
+    public float moveDistance = 0.025f;  
+    public float moveSpeed = 5f;     
     private Vector3 originalPosition;
     private bool isReturning = false;
 
@@ -45,6 +46,10 @@ public class ButtonPress : MonoBehaviour
                 ExitGame();
                 break;
 
+            case ButtonFunction.StoreMenu:
+                SwitchToStore();
+                break;
+
             case ButtonFunction.DoesNothing:
                 Debug.Log("Does nothing.");
                 break;
@@ -62,6 +67,12 @@ public class ButtonPress : MonoBehaviour
     void ExitGame()
     {
         Application.Quit();
+    }
+
+    void SwitchToStore()
+    {
+        SwitchScreenToStore storeScript = GetComponent<SwitchScreenToStore>();
+        storeScript.SwitchScreen();
     }
 
     private IEnumerator PressDownUp()

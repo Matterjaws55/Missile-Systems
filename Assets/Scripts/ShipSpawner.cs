@@ -5,6 +5,8 @@ public class ShipSpawner : MonoBehaviour
     public GameObject ships;
     public LevelManager spawner;
     public AudioSource shipStart;
+    public GameObject missileScreen;
+    public GameObject storeScreen;
 
     private bool hasPlayed = false;
 
@@ -14,12 +16,14 @@ public class ShipSpawner : MonoBehaviour
     }
 
     public void GameStart()
-    {
+    {        
         Debug.Log("Ships Spawned");
         spawner.NextLevel();
         ships.SetActive(true);
-        
-        if(!hasPlayed)
+        missileScreen.SetActive(true);
+        storeScreen.SetActive(false);
+
+        if (!hasPlayed)
         {
             shipStart.Play();
             hasPlayed = true;
