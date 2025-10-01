@@ -78,7 +78,8 @@ public class ButtonPress : MonoBehaviour
     private IEnumerator PressDownUp()
     {
         audio.Play();
-        sparksParticle.Play();
+        if(sparksParticle != null)
+            sparksParticle.Play();
 
         Vector3 downOffset = transform.TransformDirection(new Vector3(0, -moveDistance, 0));
         Vector3 downPosition = originalPosition + transform.InverseTransformDirection(downOffset);
@@ -101,6 +102,7 @@ public class ButtonPress : MonoBehaviour
 
         transform.localPosition = originalPosition; 
         isReturning = false;
-        sparksParticle.Stop();
+        if (sparksParticle != null)
+            sparksParticle.Stop();
     }
 }

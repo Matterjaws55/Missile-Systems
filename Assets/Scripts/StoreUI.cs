@@ -47,6 +47,10 @@ public class StoreUI : MonoBehaviour
     {
         if (items.Length > 3) items[3]?.SetActive(true);
     }
+    public void RubberDucky()
+    {
+        if (items.Length > 4) items[4]?.SetActive(true);
+    }
 
 
     public void CloseStore()
